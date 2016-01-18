@@ -91,6 +91,9 @@ namespace VoiceCommands
 
             // Build a Grammar object from the XML grammar.
             string fname = Application.StartupPath +"\\MediaMenuGrammar.grxml";
+            if (!System.IO.File.Exists(fname))
+                MessageBox.Show("Grammar File not found?" + Environment.NewLine + fname);
+            
             Grammar g_mediaMusic = new Grammar(fname);
             
 
@@ -151,13 +154,14 @@ namespace VoiceCommands
             if (confidence < 0.9)
                 return;
 
-            if (e.Result.Text == StopListeningText)
+            string CommandHeard = e.Result.Text.ToLower();
+            if (CommandHeard == StopListeningText.ToLower())
             {
                 //ListeningStarted = DateTime.Now.Subtract(new TimeSpan(0, 0, 30));
                 //textBox1.Text = "";
                 StoppedListening();
             }
-            if (e.Result.Text == StartListeningText)
+            if (CommandHeard == StartListeningText.ToLower())
             {
                 StartedListening();
                 //ListeningStarted = DateTime.Now;                
@@ -194,34 +198,40 @@ namespace VoiceCommands
 
             lblLastComand.Text = e.Result.Text;
 
-            if (e.Result.Text == "Exit")
+            if (CommandHeard == "exit")
             {
                 recognizer.Dispose();
                 Application.Exit();
             }
-            if (e.Result.Text == "red")
+            if (CommandHeard == "red")
             {
                 textBox1.BackColor = Color.Red;
             }
-            else if (e.Result.Text == "white")
+            else if (CommandHeard == "white")
             {
                 textBox1.BackColor = Color.Wheat;
             }
-            else if (e.Result.Text == "green")
+            else if (CommandHeard == "green")
             {
                 textBox1.BackColor = Color.Green;
             }
 
-            else if (e.Result.Text == "Light On")
+            else if (CommandHeard == "light on")
             {
                 string cmd = Application.StartupPath + "\\commands\\Plug1-On.vbs";
-                System.Diagnostics.Process.Start(cmd);
+                if (System.IO.File.Exists(cmd))
+                    System.Diagnostics.Process.Start(cmd);
+                else
+                    MessageBox.Show("Action file not found:" + cmd);
 
             }
-            else if (e.Result.Text == "Light Off")
+            else if (CommandHeard == "light off")
             {
                 string cmd = Application.StartupPath + "\\commands\\Plug1-Off.vbs";
-                System.Diagnostics.Process.Start(cmd);
+                if (System.IO.File.Exists(cmd))
+                    System.Diagnostics.Process.Start(cmd);
+                else
+                    MessageBox.Show("Action file not found:" + cmd);
             }
 
 

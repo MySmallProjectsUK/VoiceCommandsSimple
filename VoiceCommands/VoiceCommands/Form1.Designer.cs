@@ -37,7 +37,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 29);
+            this.textBox1.Location = new System.Drawing.Point(4, 37);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(712, 29);
             this.textBox1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             this.lblLastComand.AutoSize = true;
             this.lblLastComand.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastComand.Location = new System.Drawing.Point(153, 61);
+            this.lblLastComand.Location = new System.Drawing.Point(157, 69);
             this.lblLastComand.Name = "lblLastComand";
             this.lblLastComand.Size = new System.Drawing.Size(60, 24);
             this.lblLastComand.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 67);
+            this.label2.Location = new System.Drawing.Point(12, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 16);
             this.label2.TabIndex = 2;
@@ -67,9 +67,10 @@
             // 
             this.lblStatusListening.AutoSize = true;
             this.lblStatusListening.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusListening.Location = new System.Drawing.Point(7, -2);
+            this.lblStatusListening.Location = new System.Drawing.Point(0, 0);
             this.lblStatusListening.Name = "lblStatusListening";
-            this.lblStatusListening.Size = new System.Drawing.Size(40, 24);
+            this.lblStatusListening.Padding = new System.Windows.Forms.Padding(5);
+            this.lblStatusListening.Size = new System.Drawing.Size(50, 34);
             this.lblStatusListening.TabIndex = 3;
             this.lblStatusListening.Text = "Idle";
             // 
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 100);
+            this.ClientSize = new System.Drawing.Size(724, 105);
             this.Controls.Add(this.lblStatusListening);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLastComand);
